@@ -14,6 +14,7 @@ import { Grid } from './grid'
 
 
 
+
 extend({ OrbitControls });
 
 
@@ -29,17 +30,18 @@ export default function App() {
     return (
       <div id="canvas-container" >
 
+    
+    
         <Canvas id="my" camera={{ fov: 40, near: 0.1, far: 10000, position: [0, 0, 60] }}>
           <CameraControls />
 
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
           <Table />
-          {/*<Sphere />*/}
-          {/*<Helix />*/}
-          {/*<Grid />*/}
+          
 
-        </Canvas>,
+        </Canvas>
+      ,
         <div id='menu'>
           <button className="Button_inner" id="table" onClick={() => { setTable(true); setSphere(false); setHelix(false); setGrid(false) }}>TABLE</button>
           <button className="Button_inner" id="sphere" onClick={() => { setSphere(true); setTable(false); setHelix(false); setGrid(false) }}>SPHERE</button>
@@ -47,6 +49,7 @@ export default function App() {
           <button className="Button_inner" id="grid" onClick={() => { setTable(false); setSphere(false); setHelix(false); setGrid(true) }}>GRID</button>
         </div>
       </div>
+      
     )
   }
 
@@ -59,10 +62,9 @@ export default function App() {
 
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
-          {/*<Table />*/}
+          
           <Sphere />
-          {/*<Helix />*/}
-          {/*<Grid />*/}
+          
 
         </Canvas>,
         <div id='menu'>
@@ -85,10 +87,9 @@ export default function App() {
 
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
-          {/*<Table />*/}
-          {/*<Sphere />*/}
+          
           <Helix />
-          {/*<Grid />*/}
+          
 
         </Canvas>,
         <div id='menu'>
@@ -111,9 +112,7 @@ export default function App() {
 
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
-          {/*<Table />*/}
-          {/*<Sphere />*/}
-          {/*<Helix />*/}
+          
           <Grid />
 
         </Canvas>,

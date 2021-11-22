@@ -4,6 +4,8 @@ import React, { useRef, useState  } from 'react';
 import { Html } from '@react-three/drei';
 import { table, colorComponent } from "./data";
 import { Display } from './display';
+import { Flex, Box } from '@react-three/flex';
+
 
 //import { getData } from './ajaxgetter2';
 
@@ -82,10 +84,14 @@ export function Table(props) {
 
     const searching_result_map = searching_results.map((element, i) => (
         <group key={i} ref={group} position={[element[0], element[1], 0]} rotation={[0, 0, 0]} >
+            <Flex justifyContent="center" alignItems="center">
+                <Box>
             <mesh key={"a" + i} ref={refPlane} >
                 <planeGeometry args={[2, 2, 2]} />
                 <meshBasicMaterial attach="material" color={'black'} />
             </mesh>
+            </Box>
+            </Flex>
             <Html key={"b" + i} position={[0, 0.05, 0.09]} transform occlude  >
                 <button onClick={() => {
 
